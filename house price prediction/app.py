@@ -1,7 +1,10 @@
 import streamlit as st
 import pickle
 import pandas as pd
-with open("house_model.pkl", "rb") as file:
+from pathlib import Path
+MODEL_PATH = Path(__file__).parent / "house_model.pkl"
+
+with open(MODEL_PATH, "rb") as file:
     model = pickle.load(file)
 
 st.set_page_config(
